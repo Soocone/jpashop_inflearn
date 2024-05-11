@@ -58,7 +58,7 @@ public class Order {
         delivery.setOrder(this);
     }
 
-    //==생성 메서드==//
+    //==생성 메서드==// 오더아이템은 여러개를 할 수 있으니 (...)문법 사용
     public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
         Order order = new Order();
         order.setMember(member);
@@ -68,6 +68,7 @@ public class Order {
         }
         order.setStatus(OrderStatus.ORDER);
         order.setOrderDate(LocalDateTime.now());
+
         return order;
     }
 

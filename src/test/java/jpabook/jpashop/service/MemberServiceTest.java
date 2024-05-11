@@ -13,9 +13,9 @@ import javax.persistence.EntityManager;
 
 import static org.junit.Assert.*;
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class) // 얘랑 밑에 어노테이션이 있어야 스프링이랑 integration해서 스프링에 올릴 수 있음
 @SpringBootTest
-@Transactional
+@Transactional // 이게 있어야 rollback 해줌
 public class MemberServiceTest {
 
     @Autowired MemberService memberService;
@@ -46,9 +46,9 @@ public class MemberServiceTest {
 
         //when
         memberService.join(member1);
-        memberService.join(member2); //예외가 발생해야 한다!!!
+        memberService.join(member2); // 동일한 이름이므로 예외가 발생해야 한다!!!
 
         //then
-        fail("예외가 발생해야 한다.");
+        fail("예외가 발생해야 한다."); // 여기까지 오면 안되고 이 전에 예외가 발생하여 빠져나가야 함
     }
 }

@@ -13,7 +13,7 @@ import static javax.persistence.FetchType.*;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 빈 생성자 new 객체 생성 불가하도록 막음
 public class OrderItem {
 
     @Id @GeneratedValue
