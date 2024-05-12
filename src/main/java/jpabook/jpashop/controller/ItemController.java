@@ -48,7 +48,7 @@ public class ItemController {
 
     @GetMapping("items/{itemId}/edit")
     public String updateItemForm(@PathVariable("itemId") Long itemId, Model model) {
-        Book item = (Book) itemService.findOne(itemId);
+        Book item = (Book) itemService.findOne(itemId); // 캐스팅 해서 쓰는 게 좋지는 않음. 예제 단순화를 위해 사용
 
         BookForm form = new BookForm();
         form.setId(item.getId());
